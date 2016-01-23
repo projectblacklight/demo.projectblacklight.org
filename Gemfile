@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -44,12 +43,12 @@ group :development, :test do
 end
 
 gem 'mysql2'
-gem 'blacklight', '>= 5.3.0'
+gem 'blacklight', '>= 6.0.0'
 gem 'jettywrapper', '>= 2.0'
-gem 'rsolr', '~> 1.0.6'
+gem 'rsolr', '~> 1.0'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
-gem 'blacklight-marc', '~> 5.0'
+gem 'blacklight-marc', '~> 6.0'
 gem 'capistrano-rvm'
 gem 'capistrano-rails'
 gem 'capistrano-passenger'

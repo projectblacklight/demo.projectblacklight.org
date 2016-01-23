@@ -1,8 +1,8 @@
 # -*- encoding : utf-8 -*-
-class CatalogController < ApplicationController  
+class CatalogController < ApplicationController
+  include Blacklight::Catalog
   include Blacklight::Marc::Catalog
 
-  include Blacklight::Catalog
 
   configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
