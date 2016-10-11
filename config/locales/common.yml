@@ -1,0 +1,59 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+common:
+
+  blacklight:
+    search_fields:
+      all_fields: 'All fields'
+      title: 'Title'
+      author: 'Author'
+      subject: 'Subject'
+    sort_fields:
+      relevancy: 'relevance'
+      pub_date: 'publication year'
+      title: 'title'
+      author: 'author'
+    search:
+      fields:
+        title_display: 'Title'
+        title_vern_display: 'Title'
+        author_display: 'Author'
+        author_vern_display: 'Author'
+        format: 'Format'
+        language_facet: 'Language'
+        published_display: 'Published'
+        published_vern_display: 'Published'
+        lc_callnum_display: 'Call number'
+        subtitle_display: 'Subtitle'
+        subtitle_vern_display: 'Subtitle'
+        url_fulltext_display: 'URL'
+        url_suppl_display: 'More Information'
+        isbn_t: 'ISBN'
+        format: 'Format'
+        pub_date: 'Publication Year'
+        subject_topic_facet: 'Topic'
+        language_facet: 'Language'
+        lc_1letter_facet: 'Call Number'
+        subject_geo_facet: 'Region'
+        subject_era_facet: 'Era'
+        example_pivot_field: 'Pivot Field'
+        example_query_facet_field: 'Publish Date'
