@@ -1,0 +1,10 @@
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+    <%= I18n.locale %>
+  </a>
+  <div class="dropdown-menu">
+    <% Rails.application.config.available_locales.each do |l| %>
+      <%= link_to l, (url_for(locale: l) rescue blacklight.url_for(locale: nil, script_name: "/#{l}")), class: 'dropdown-item' %>
+    <% end %>
+  </div>
+</li>
