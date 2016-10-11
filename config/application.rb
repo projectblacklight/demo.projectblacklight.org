@@ -24,5 +24,9 @@ module DemoProjectblacklightOrg
     config.active_record.raise_in_transactional_callbacks = true
 
     config.available_locales = %w(de en es fr it pt-BR)
+    I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
+    config.available_locales.each do |l|
+      I18n.fallbacks.map l => :common
+    end
   end
 end
