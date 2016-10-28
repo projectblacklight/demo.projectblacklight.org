@@ -1,0 +1,33 @@
+fr:
+  blacklight:
+    search_fields:
+      title: 'Titre'
+      author: 'Auteur'
+      subject: 'Sujet'
+    sort_fields:
+      relevancy: 'relevance'
+      pub_date: 'date de publication'
+      title: 'titre'
+      author: 'auteur'
+    search:
+      fields:
+        title_display: 'Titre'
+        title_vern_display: 'Titre'
+        author_display: 'Auteur'
+        author_vern_display: 'Auteur'
+        format: 'Nature de document'
+        language_facet: 'Langue'
+        published_display: 'Lieu'
+        published_vern_display: 'Lieu'
+        lc_callnum_display: 'Cote'
+        subtitle_display: 'Sous-titre'
+        subtitle_vern_display: 'Sous-titre'
+        url_fulltext_display: 'URL'
+        url_suppl_display: 'Information additionnelle'
+        isbn_t: 'ISBN'
+        pub_date: 'Date de publication'
+        subject_topic_facet: 'Thème'
+        lc_1letter_facet: 'Cote'
+        subject_geo_facet: 'Sujets géographiques'
+        subject_era_facet: 'Couverture temporelle'
+        example_query_facet_field: 'Date de publication'
