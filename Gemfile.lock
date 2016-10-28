@@ -1,9 +1,9 @@
 GIT
   remote: git://github.com/projectblacklight/blacklight.git
-  revision: 25a93993926d8c10804e427c60eb835372643fce
+  revision: 6014bebb2ded3803c739d40ae1f074cf3846f949
   specs:
     blacklight (7.0.0.alpha)
-      bootstrap (>= 4.0.0.alpha, < 5)
+      bootstrap (>= 4.0.0.alpha5, < 5)
       deprecation
       globalid
       kaminari (>= 0.15)
