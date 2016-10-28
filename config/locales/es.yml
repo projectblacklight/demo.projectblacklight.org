@@ -1,0 +1,34 @@
+de:
+  blacklight:
+    search_fields:
+      all_fields: 'Todos los campos'
+      title: 'Título'
+      author: 'Autor'
+      subject: 'Materia'
+    sort_fields:
+      relevancy: 'relevancia'
+      pub_date: 'año de publicación'
+      title: 'título'
+      author: 'autor'
+    search:
+      fields:
+        title_display: 'Título'
+        title_vern_display: 'Título'
+        author_display: 'Autor'
+        author_vern_display: 'Autor'
+        format: 'Format'
+        language_facet: 'Lenguaje'
+        published_display: 'Lugar de publicación'
+        published_vern_display: 'Lugar de publicación'
+        lc_callnum_display: 'No. de Clasificación'
+        subtitle_display: 'Subtitular'
+        subtitle_vern_display: 'Subtitular'
+        url_fulltext_display: 'URL'
+        url_suppl_display: 'Suplementos'
+        isbn_t: 'ISBN'
+        pub_date: 'Año de Publicación'
+        subject_topic_facet: 'Tópico'
+        lc_1letter_facet: 'No. de Clasificación'
+        subject_geo_facet: 'Región'
+        subject_era_facet: 'Época'
+        example_query_facet_field: 'Fecha de Publicación'
