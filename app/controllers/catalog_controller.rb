@@ -127,14 +127,14 @@ class CatalogController < ApplicationController
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
 
-    config.add_search_field 'all_fields', label: I18n.t(:'blacklight.search_fields.all_fields')
+    config.add_search_field 'all_fields'
 
 
     # Now we see how to over-ride Solr request handler defaults, in this
     # case for a BL "search field", which is really a dismax aggregate
     # of Solr search fields.
 
-    config.add_search_field('title', label: I18n.t(:'blacklight.search_fields.title')) do |field|
+    config.add_search_field('title') do |field|
       # solr_parameters hash are sent to Solr as ordinary url query params.
       field.solr_parameters = { :'spellcheck.dictionary' => 'title' }
 
@@ -148,7 +148,7 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field('author', label: I18n.t(:'blacklight.search_fields.author')) do |field|
+    config.add_search_field('author') do |field|
       field.solr_parameters = { :'spellcheck.dictionary' => 'author' }
       field.solr_local_parameters = {
         qf: '$author_qf',
@@ -159,7 +159,7 @@ class CatalogController < ApplicationController
     # Specifying a :qt only to show it's possible, and so our internal automated
     # tests can test it. In this case it's the same as
     # config[:default_solr_parameters][:qt], so isn't actually neccesary.
-    config.add_search_field('subject', label: I18n.t(:'blacklight.search_fields.subject')) do |field|
+    config.add_search_field('subject') do |field|
       field.solr_parameters = { :'spellcheck.dictionary' => 'subject' }
       field.qt = 'search'
       field.solr_local_parameters = {
@@ -172,10 +172,10 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, pub_date_sort desc, title_sort asc', label: I18n.t(:'blacklight.sort_fields.relevancy')
-    config.add_sort_field 'pub_date_sort desc, title_sort asc', label: I18n.t(:'blacklight.sort_fields.pub_date')
-    config.add_sort_field 'author_sort asc, title_sort asc', label: I18n.t(:'blacklight.sort_fields.author')
-    config.add_sort_field 'title_sort asc, pub_date_sort desc', label: I18n.t(:'blacklight.sort_fields.title')
+    config.add_sort_field 'relevancy', field: 'score desc, pub_date_sort desc, title_sort asc'
+    config.add_sort_field 'pub_date', field: 'pub_date_sort desc, title_sort asc'
+    config.add_sort_field 'author', field: 'author_sort asc, title_sort asc'
+    config.add_sort_field 'title', field: 'title_sort asc, pub_date_sort desc'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
