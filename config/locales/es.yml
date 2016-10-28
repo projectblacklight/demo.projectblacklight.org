@@ -1,17 +1,17 @@
 es:
   blacklight:
-    search_fields:
-      all_fields: 'Todos los campos'
-      title: 'Título'
-      author: 'Autor'
-      subject: 'Materia'
-    sort_fields:
-      relevancy: 'relevancia'
-      pub_date: 'año de publicación'
-      title: 'título'
-      author: 'autor'
     search:
       fields:
+        search:
+          all_fields: 'Todos los campos'
+          title: 'Título'
+          author: 'Autor'
+          subject: 'Materia'
+        sort:
+          relevancy: 'relevancia'
+          pub_date: 'año de publicación'
+          title: 'título'
+          author: 'autor'
         title_display: 'Título'
         title_vern_display: 'Título'
         author_display: 'Autor'

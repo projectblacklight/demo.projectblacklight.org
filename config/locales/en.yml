@@ -21,18 +21,18 @@
 
 en:
   blacklight:
-    search_fields:
-      all_fields: 'All fields'
-      title: 'Title'
-      author: 'Author'
-      subject: 'Subject'
-    sort_fields:
-      relevancy: 'relevance'
-      pub_date: 'publication year'
-      title: 'title'
-      author: 'author'
     search:
       fields:
+        search:
+          all_fields: 'All fields'
+          title: 'Title'
+          author: 'Author'
+          subject: 'Subject'
+        sort:
+          relevancy: 'relevance'
+          pub_date: 'publication year'
+          title: 'title'
+          author: 'author'
         title_display: 'Title'
         title_vern_display: 'Title'
         author_display: 'Author'

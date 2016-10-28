@@ -1,17 +1,17 @@
 de:
   blacklight:
-    search_fields:
-      all_fields: 'Alle Felder'
-      title: 'Titel'
-      author: 'Verfasser'
-      subject: 'Thema'
-    sort_fields:
-      relevancy: 'Relevanz'
-      pub_date: 'Publikationsjahr'
-      title: 'Titel'
-      author: 'Verfasser'
     search:
       fields:
+        search:
+          all_fields: 'Alle Felder'
+          title: 'Titel'
+          author: 'Verfasser'
+          subject: 'Thema'
+        sort:
+          relevancy: 'Relevanz'
+          pub_date: 'Publikationsjahr'
+          title: 'Titel'
+          author: 'Verfasser'
         title_display: 'Titel'
         title_vern_display: 'Titel'
         author_display: 'Verfasser'
