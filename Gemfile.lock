@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/projectblacklight/blacklight.git
-  revision: 1cfced619f9582a0655d7151a5ec1c01dc99db97
+  revision: a48cbe8552600cac7ae8e7ff00e23e9f64bab63a
   specs:
     blacklight (7.0.0.alpha)
       bootstrap (>= 4.0.0.alpha5, < 5)
@@ -225,7 +225,7 @@ GEM
     unf_ext (0.0.7.2)
     warden (1.2.6)
       rack (>= 1.0)
-    web-console (3.3.1)
+    web-console (3.4.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       debug_inspector
