@@ -1,5 +1,10 @@
 @import 'bootstrap';
 
 @import 'blacklight/blacklight';
-/* @import 'blacklight_marc'; */
+$padding-xs-horizontal: 1ch !default;
 
+@import 'blacklight_marc';
+
+#marc_view .tag {
+  @extend .tag-default;
+}
