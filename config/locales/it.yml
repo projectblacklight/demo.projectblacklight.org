@@ -1,0 +1,35 @@
+it:
+  blacklight:
+    search:
+      fields:
+        search:
+          all_fields: 'Tutti'
+          title: 'Titolo'
+          author: 'Autore'
+          subject: 'Tema'
+        sort:
+          relevancy: 'rilevanza'
+          pub_date: 'anno di pubblicazione'
+          title: 'titolo'
+          author: 'autore'
+        title_display: 'Titolo'
+        title_vern_display: 'Titolo'
+        author_display: 'Autore'
+        author_vern_display: 'Autore'
+        format: 'Tipo'
+        language_facet: 'Lingua'
+        published_display: 'Località di pubblicazione'
+        published_vern_display: 'Località di pubblicazione'
+        lc_callnum_display: 'Chiama il numero'
+        subtitle_display: 'Sottotitolo'
+        subtitle_vern_display: 'Sottotitolo'
+        url_fulltext_display: 'URL'
+        url_suppl_display: 'Informazioni aggiuntive'
+        isbn_t: 'ISBN'
+        pub_date: 'Anno di pubblicazione'
+        subject_topic_facet: 'Tema'
+        lc_1letter_facet: 'Chiama il numero'
+        subject_geo_facet: 'Paese'
+        subject_era_facet: 'Era'
+        example_pivot_field: 'Pivot Field'
+        example_query_facet_field: 'Data di pubblicazione'
