@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/projectblacklight/blacklight.git
-  revision: a1bf5682371084ba9cda61bdbd4d40197318bfe6
+  revision: 7d6ae320154c425b4d5b9ad8de22e1dd9fba2727
   specs:
     blacklight (7.0.0.alpha)
       bootstrap (>= 4.0.0.alpha5, < 5)
