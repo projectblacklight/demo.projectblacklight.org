@@ -6,5 +6,5 @@ $padding-xs-horizontal: 1ch !default;
 @import 'blacklight_marc';
 
 #marc_view .tag {
-  @extend .tag-default;
+  @extend .badge-default;
 }
