@@ -12,6 +12,6 @@ module DemoProjectblacklightOrg
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    config.available_locales = %w(de en es fr it pt-BR)
+    config.available_locales = %w(de en es fr it pt-BR sq)
   end
 end
