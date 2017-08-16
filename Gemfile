@@ -62,6 +62,8 @@ gem 'devise-guests', '~> 0.3'
 gem 'blacklight-marc', '~> 6.0'
 gem 'traject'
 
+gem 'honeybadger'
+
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
 end
