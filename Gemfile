@@ -59,7 +59,7 @@ gem 'blacklight', '>= 6.0.0', github: 'projectblacklight/blacklight'
 gem 'rsolr', '>= 2.0.0.alpha'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
-gem 'blacklight-marc', '~> 6.0'
+gem 'blacklight-marc', github: 'projectblacklight/blacklight-marc'
 gem 'traject'
 
 gem 'honeybadger'
