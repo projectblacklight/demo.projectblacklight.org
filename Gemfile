@@ -54,7 +54,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'mysql2'
+gem 'mysql2', group: :production
 gem 'blacklight', '>= 6.0.0', github: 'projectblacklight/blacklight'
 gem 'rsolr', '>= 2.0.0.alpha'
 gem 'devise'
