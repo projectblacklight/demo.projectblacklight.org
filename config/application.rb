@@ -15,7 +15,7 @@ module DemoProjectblacklightOrg
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    config.available_locales = %w(de en es fr it nl pt-BR sq)
+    config.available_locales = %w(de en es fr hu it nl pt-BR sq zh)
 
     config.action_dispatch.rescue_responses.merge!(
       "I18n::InvalidLocale" => :not_found
