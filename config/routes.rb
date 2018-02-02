@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  scope '/:locale' do
+  scope '/(:locale)' do
     Blacklight::Marc.add_routes(self)
 
     root to: 'catalog#index'
@@ -23,10 +23,10 @@ Rails.application.routes.draw do
       end
     end
 
-    mount Blacklight::Engine, at: '/'
-
     devise_for :users
   end
+  Blacklight::Engine.routes.default_scope = { path: '(:locale)', module: 'blacklight' }
+  mount Blacklight::Engine, at: '/'
 
   get '/' => 'catalog#index'
 end

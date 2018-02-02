@@ -4,7 +4,7 @@
   </a>
   <div class="dropdown-menu">
     <% Rails.application.config.available_locales.each do |l| %>
-      <%= link_to l, (url_for(locale: l) rescue blacklight.url_for(locale: nil, script_name: "/#{l}")), class: 'dropdown-item' %>
+      <%= link_to l, (url_for(locale: l) rescue blacklight.url_for(locale: l)), class: 'dropdown-item' %>
     <% end %>
   </div>
 </li>
