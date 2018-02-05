@@ -1,0 +1,6 @@
+---
+exceptions:
+  ignore:
+    - 'Blacklight::Exceptions::RecordNotFound'
+    - 'I18n::InvalidLocale'
+
