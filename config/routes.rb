@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
     devise_for :users
   end
-  Blacklight::Engine.routes.default_scope = { path: '(:locale)', module: 'blacklight' }
+  Blacklight::Engine.routes.default_scope = { path: '(:locale)' }
   mount Blacklight::Engine, at: '/'
 
   get '/' => 'catalog#index'
