@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  scope '/(:locale)' do
+  scope '/(:locale)',
+    # This is a workaround for https://github.com/rails/rails/issues/32013
+    constraints: { locale: /(#{Rails.application.config.available_locales.join('|')})/ } do
+
     Blacklight::Marc.add_routes(self)
 
     root to: 'catalog#index'
