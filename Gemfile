@@ -56,7 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mysql2', group: :production
 gem 'blacklight', '>= 6.0.0', github: 'projectblacklight/blacklight'
-gem 'rsolr', '>= 2.0.0.alpha'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
 gem 'blacklight-marc', github: 'projectblacklight/blacklight-marc'
@@ -67,3 +66,8 @@ gem 'honeybadger'
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
 end
+
+gem 'rsolr', '>= 1.0'
+gem 'bootstrap', '~> 4.0'
+gem 'popper_js'
+gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
