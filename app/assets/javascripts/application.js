@@ -11,11 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+//= require rails-ujs
 //= require turbolinks
 //
 // Required by Blacklight
-//= require jquery
 //= require popper
 // Twitter Typeahead for autocomplete
 //= require twitter/typeahead
