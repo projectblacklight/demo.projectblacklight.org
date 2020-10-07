@@ -15,9 +15,11 @@ task ci: [:environment] do
     require 'solr_wrapper'
     Rake::Task['db:migrate'].invoke
 
-    SolrWrapper.wrap do |solr|
-      Rake::Task['blacklight:index:seed'].invoke
-      Rake::Task['spec'].invoke
+    SolrWrapper.wrap(port: '8983') do |solr|
+      solr.with_collection(name: 'blacklight-core', dir: Rails.root.join('solr/conf')) do
+        Rake::Task['blacklight:index:seed'].invoke
+        Rake::Task['spec'].invoke
+      end
     end
   end
 end
