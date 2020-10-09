@@ -1,0 +1,56 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ca:
+  blacklight:
+    search:
+      fields:
+        search:
+          all_fields: 'Qualsevol camp'
+          title: 'Títol'
+          author: 'Autor'
+          subject: 'Matèria'
+        sort:
+          relevancy: 'rellevància'
+          pub_date: 'data de publicació'
+          title: 'títol'
+          author: 'author'
+        title_display: 'Títol'
+        title_vern_display: 'Títol'
+        author_display: 'Autor'
+        author_vern_display: 'Autor'
+        format: 'Format'
+        language_facet: 'Llengua'
+        published_display: 'Publicat'
+        published_vern_display: 'Publicat'
+        lc_callnum_display: 'Topogràfic'
+        subtitle_display: 'Subtítol'
+        subtitle_vern_display: 'Subtítol'
+        url_fulltext_display: 'URL'
+        url_suppl_display: 'Més informació'
+        isbn_t: 'ISBN'
+        pub_date: 'Data de publicació'
+        subject_topic_facet: 'Tema'
+        lc_1letter_facet: 'Topogràfic'
+        subject_geo_facet: 'Regió'
+        subject_era_facet: 'Era'
+        example_pivot_field: 'Pivot Field'
+        example_query_facet_field: 'Data de publicació'
