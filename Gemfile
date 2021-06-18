@@ -63,10 +63,10 @@ gem 'jquery-rails'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mysql2', group: :production
-gem 'blacklight', '>= 6.0.0', github: 'projectblacklight/blacklight'
+gem 'blacklight', '>= 6.0.0'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
-gem 'blacklight-marc', github: 'projectblacklight/blacklight-marc'
+gem 'blacklight-marc'
 gem 'traject'
 
 gem 'honeybadger'
