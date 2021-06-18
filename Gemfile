@@ -76,7 +76,6 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
-gem 'mini_racer'
 
 gem 'rsolr', '>= 1.0'
 gem 'bootstrap', '~> 4.0'
