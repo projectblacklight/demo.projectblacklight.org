@@ -10,6 +10,8 @@ gem 'rails', '~> 6.1.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
+# NOTE: this MUST match the puma version Elastic Beanstalk uses or
+# things break.
 gem 'puma', '5.6.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
