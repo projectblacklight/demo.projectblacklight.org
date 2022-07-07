@@ -419,10 +419,6 @@
       users normally should not need to know about them.
      -->
     <fieldType name="point" class="solr.PointType" dimension="2" subFieldSuffix="_d"/>
-
-    <!-- A specialized field for geospatial search. If indexed, this fieldType must not be multivalued. -->
-    <fieldType name="location" class="solr.LatLonType" subFieldSuffix="_coordinate"/>
-
     <fieldType name="location_rpt" class="solr.SpatialRecursivePrefixTreeFieldType"
                geo="true" distErrPct="0.025" maxDistErr="0.001" distanceUnits="kilometers"/>
 
@@ -679,14 +675,6 @@
 
    <dynamicField name="*_bs" type="boolean" stored="true" indexed="false" multiValued="false"/>
    <dynamicField name="*_bsi" type="boolean" stored="true" indexed="true" multiValued="false"/>
-
-   <dynamicField name="*_lli" type="location" stored="false" indexed="true" multiValued="false"/>
-   <dynamicField name="*_llim" type="location" stored="false" indexed="true" multiValued="true"/>
-
-   <dynamicField name="*_lls" type="location" stored="true" indexed="false" multiValued="false"/>
-   <dynamicField name="*_llsm" type="location" stored="true" indexed="false" multiValued="true"/>
-   <dynamicField name="*_llsi" type="location" stored="true" indexed="true" multiValued="false"/>
-   <dynamicField name="*_llsim" type="location" stored="true" indexed="true" multiValued="true"/>
 
    <dynamicField name="*_srpt" type="location_rpt" stored="true" indexed="true" multiValued="true" />
    <dynamicField name="*_bbox" type="bbox" stored="true" indexed="true" />
