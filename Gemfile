@@ -12,7 +12,7 @@ gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 # NOTE: this MUST match the puma version Elastic Beanstalk uses or
 # things break.
-gem 'puma', '5.6.2'
+gem 'puma', '5.6.4'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
