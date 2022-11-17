@@ -6,15 +6,20 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.0'
+gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
+
+# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem "sprockets-rails"
+
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+gem "sqlite3", "~> 1.4"
+
 # Use Puma as the app server
 # NOTE: this MUST match the puma version Elastic Beanstalk uses or
 # things break.
-gem 'puma', '5.6.4'
-# Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
+gem 'puma', '6.0.0'
+# Use Sass to process CSS
+gem 'sassc-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 # gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -32,8 +37,6 @@ gem 'jbuilder', '~> 2.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'sprockets', '~> 4.0'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -42,7 +45,7 @@ gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'debug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
@@ -57,8 +60,6 @@ group :development do
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
 end
 
 gem 'jquery-rails'
@@ -82,6 +83,6 @@ end
 
 
 gem 'rsolr', '>= 1.0'
-gem 'bootstrap', '~> 4.0'
+gem 'bootstrap', '~> 5.0'
 gem 'popper_js'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
