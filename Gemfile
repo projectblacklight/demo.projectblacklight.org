@@ -85,4 +85,3 @@ end
 gem 'rsolr', '>= 1.0'
 gem 'bootstrap', '~> 5.0'
 gem 'popper_js'
-gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
