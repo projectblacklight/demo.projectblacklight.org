@@ -72,16 +72,14 @@ GEM
       execjs (~> 2)
     bcrypt (3.1.18)
     bindex (0.8.1)
-    blacklight (7.33.1)
-      deprecation
+    blacklight (8.0.0.beta8)
       globalid
-      hashdiff
       i18n (>= 1.7.0)
       jbuilder (~> 2.7)
       kaminari (>= 0.15)
       ostruct (>= 0.3.2)
-      rails (>= 5.1, < 7.1)
-      view_component (~> 2.66)
+      rails (>= 6.1, < 8)
+      view_component (>= 2.66, < 3.1)
     blacklight-marc (8.0.0)
       blacklight (>= 7.11, < 9)
       library_stdnums
@@ -111,8 +109,6 @@ GEM
     debug (1.7.1)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
-    deprecation (1.1.0)
-      activesupport
     devise (4.9.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -138,7 +134,6 @@ GEM
       rake
     globalid (1.1.0)
       activesupport (>= 5.0)
-    hashdiff (1.0.1)
     hashie (5.0.0)
     honeybadger (5.2.0)
     http (5.1.1)
@@ -374,7 +369,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  blacklight (>= 6.0.0)
+  blacklight (>= 8.0.0.beta8)
   blacklight-marc
   bootsnap (>= 1.4.4)
   bootstrap (~> 5.0)
