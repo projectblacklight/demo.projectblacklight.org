@@ -68,7 +68,7 @@ gem 'jquery-rails'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mysql2', group: :production
-gem 'blacklight', '>= 6.0.0'
+gem 'blacklight', '>= 8.0.0.beta8'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
 gem 'blacklight-marc'
@@ -85,4 +85,3 @@ end
 gem 'rsolr', '>= 1.0'
 gem 'bootstrap', '~> 5.0'
 gem 'popper_js'
-gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
