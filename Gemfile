@@ -14,10 +14,6 @@ gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 
-# Use Puma as the app server
-# NOTE: this MUST match the puma version Elastic Beanstalk uses or
-# things break.
-gem 'puma', '6.0.0'
 # Use Sass to process CSS
 gem 'sassc-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -60,6 +56,9 @@ group :development do
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
+
+  # In production, ElasticBeanstalk will provide it's own version of puma
+  gem 'puma'
 end
 
 gem 'jquery-rails'
