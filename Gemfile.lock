@@ -365,7 +365,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  blacklight (>= 8.0.0.beta8)
+  blacklight (~> 8.0)
   blacklight-marc
   bootsnap (>= 1.4.4)
   bootstrap (~> 5.0)
