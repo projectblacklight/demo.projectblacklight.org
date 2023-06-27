@@ -80,6 +80,8 @@ GEM
       ostruct (>= 0.3.2)
       rails (>= 6.1, < 8)
       view_component (>= 2.66, < 3.1)
+    blacklight-locale_picker (1.0.0)
+      rails (>= 5.2.3, < 7.1)
     blacklight-marc (8.0.0)
       blacklight (>= 7.11, < 9)
       library_stdnums
@@ -366,6 +368,7 @@ PLATFORMS
 
 DEPENDENCIES
   blacklight (~> 8.0)
+  blacklight-locale_picker
   blacklight-marc
   bootsnap (>= 1.4.4)
   bootstrap (~> 5.0)
