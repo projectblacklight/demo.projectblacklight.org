@@ -297,7 +297,7 @@ GEM
     rspec-support (3.13.0)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
-    sassc (2.4.0)
+    sassc (2.1.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
       railties (>= 4.0.0)
@@ -399,6 +399,7 @@ DEPENDENCIES
   rails (~> 7.0.2, >= 7.0.2.3)
   rsolr (>= 1.0)
   rspec-rails
+  sassc (~> 2.1, < 2.2)
   sassc-rails
   selenium-webdriver
   solr_wrapper (~> 4.0)

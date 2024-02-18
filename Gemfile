@@ -16,6 +16,8 @@ gem "sqlite3", "~> 1.4"
 
 # Use Sass to process CSS
 gem 'sassc-rails'
+# https://github.com/sass/sassc-ruby/issues/146
+gem "sassc", "~> 2.1", "< 2.2"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 # gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
