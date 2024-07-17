@@ -94,3 +94,5 @@ gem 'blacklight-locale_picker'
 
 # pin for beanstalk..
 gem 'nio4r', '2.7.0'
+# https://github.com/sass/sassc-ruby/issues/146
+gem "sassc", "~> 2.1", "< 2.2"
