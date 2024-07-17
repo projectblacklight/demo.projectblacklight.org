@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "bundler"
+    directory: "/"
+    groups:
+      dependencies:
+        patterns:
+          - "*"
+    versioning-strategy: increase-if-necessary      
+    schedule:
+      interval: "weekly"
+      time: "04:00"
