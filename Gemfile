@@ -91,3 +91,6 @@ gem 'rsolr', '>= 1.0'
 gem 'bootstrap', '~> 5.0'
 gem 'popper_js'
 gem 'blacklight-locale_picker'
+
+# pin for beanstalk..
+gem 'nio4r', '2.7.0'
