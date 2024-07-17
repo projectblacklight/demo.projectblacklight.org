@@ -16,8 +16,6 @@ gem "sqlite3", "~> 1.4"
 
 # Use Sass to process CSS
 gem 'sassc-rails'
-# https://github.com/sass/sassc-ruby/issues/146
-gem "sassc", "~> 2.1", "< 2.2"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
