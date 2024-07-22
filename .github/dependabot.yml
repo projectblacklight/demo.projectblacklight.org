@@ -10,7 +10,7 @@ updates:
       dependencies:
         patterns:
           - "*"
-    versioning-strategy: increase-if-necessary      
+    versioning-strategy: lockfile-only      
     schedule:
       interval: "weekly"
       time: "04:00"
