@@ -14,9 +14,6 @@ gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 
-# Use Sass to process CSS
-gem 'sassc-rails'
-
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
@@ -88,11 +85,9 @@ end
 
 
 gem 'rsolr', '>= 1.0'
-gem 'bootstrap', '~> 5.0'
-gem 'popper_js'
 gem 'blacklight-locale_picker'
 
 # pin for beanstalk..
 gem 'nio4r', '2.7.0'
-# https://github.com/sass/sassc-ruby/issues/146
-gem "sassc", "~> 2.1", "< 2.2"
+
+gem "cssbundling-rails", "~> 1.4"
