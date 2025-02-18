@@ -88,6 +88,6 @@ gem 'rsolr', '>= 1.0'
 gem 'blacklight-locale_picker'
 
 # pin for beanstalk..
-gem 'nio4r', '2.7.0'
+gem 'nio4r', '2.7.4'
 
 gem "cssbundling-rails", "~> 1.4"
