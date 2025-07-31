@@ -25,4 +25,6 @@ jobs:
           ruby-version: 3.3
           bundler-cache: true
       - name: Run tests
+        env:
+          RAILS_ENV: test
         run: bundle exec rake

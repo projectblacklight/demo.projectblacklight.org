@@ -9,7 +9,7 @@ require 'solr_wrapper/rake_task' unless Rails.env.production?
 task(:default).clear
 task default: [:ci]
 
-desc "Execute the test build that runs on travis"
+desc "Execute the test build that runs on Github Actions"
 task ci: [:environment] do
   if Rails.env.test?
     require 'solr_wrapper'
