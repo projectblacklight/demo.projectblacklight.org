@@ -257,8 +257,6 @@ GEM
     rack-cors (3.0.0)
       logger
       rack (>= 3.0.14)
-    rack-mini-profiler (2.3.4)
-      rack (>= 1.2.0)
     rack-session (2.1.1)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
@@ -430,7 +428,6 @@ DEPENDENCIES
   nio4r (= 2.7.4)
   puma
   rack-cors
-  rack-mini-profiler (~> 2.0)
   rails (~> 7.2.0)
   rsolr (>= 1.0)
   rspec-rails
