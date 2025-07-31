@@ -58,8 +58,6 @@ group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
 
-  # In production, ElasticBeanstalk will provide it's own version of puma
-  gem 'puma'
 end
 
 gem 'blacklight', '~> 8.0'
@@ -79,3 +77,6 @@ gem 'nio4r', '2.7.4'
 gem 'uri', '~> 0.13.0'
 
 gem 'cssbundling-rails', '~> 1.4'
+
+gem "thruster", "~> 0.1.14"
+gem 'puma'
