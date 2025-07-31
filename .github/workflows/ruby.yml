@@ -19,6 +19,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Start Solr
+        run: docker compose up -d solr
+      - name: Wait for Solr to be healthy
+        run: |
+          timeout 120s bash -c \
+            'until docker ps --filter "name=solr" --format "{{.Status}}" | grep -q "healthy"; do \
+              echo "Waiting for Solr container to be healthy..."; \
+              sleep 5; \
+            done'
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -27,4 +36,4 @@ jobs:
       - name: Run tests
         env:
           RAILS_ENV: test
-        run: bin/rake db:setup ci
+        run: bin/rake db:setup blacklight:index:seed spec
