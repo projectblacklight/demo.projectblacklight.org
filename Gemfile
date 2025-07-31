@@ -47,7 +47,9 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
+  gem 'solr_wrapper', '~> 4.0'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
@@ -69,11 +71,6 @@ gem 'mysql2', group: :production
 gem 'traject'
 
 gem 'honeybadger'
-
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'solr_wrapper', '~> 4.0'
-end
 
 gem 'blacklight-locale_picker'
 gem 'rsolr', '>= 1.0'
