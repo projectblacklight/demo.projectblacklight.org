@@ -1,24 +1,21 @@
-# README
+# demo.projectblacklight.org
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an example of a Blacklight powered application with minimal configuration.
 
-Things you may want to cover:
+There is a compose.yaml file that can be used to run the application locally. It defines the services required to run the application:
+* Solr
 
-* Ruby version
+# Run
+Then you can run the services by running `docker compose up mysql solr`.
 
-* System dependencies
 
-* Configuration
+Add some documents to the Solr index by running:
+```
+bin/rake blacklight:index:seed
+```
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can start the development server by running:
+```
+bin/dev
+```
