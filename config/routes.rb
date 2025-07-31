@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     root to: 'catalog#index'
     concern :searchable, Blacklight::Routes::Searchable.new
 
-    resource :catalog, only: [:index], controller: 'catalog' do
+    resource :catalog, only: [], controller: 'catalog' do
       concerns :searchable
     end
 

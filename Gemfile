@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.2.0'
+gem 'rails', '~> 8.0.2'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'propshaft'
@@ -76,6 +76,6 @@ gem 'rsolr', '>= 1.0'
 
 # pin for beanstalk..
 gem 'nio4r', '2.7.4'
-gem 'uri', '~>0.12.1'
+gem 'uri', '~> 0.13.0'
 
 gem 'cssbundling-rails', '~> 1.4'
