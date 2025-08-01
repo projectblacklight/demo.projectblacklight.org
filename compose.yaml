@@ -10,12 +10,13 @@ services:
     #- .:/app
     depends_on:
       - solr
-      - mysql
     # command: bundle exec rails server -b 0.0.0.0 -p 3000
     environment:
       - SOLR_URL # Set via environment variable or use default defined in .env file
       - SECRET_KEY_BASE
       - DATABASE_URL
+    volumes:
+      - sqlite3-data-blacklight-demo:/rails/storage
 
   solr:
     environment:
@@ -45,16 +46,5 @@ services:
       - "-Xms256m"
       - "-Xmx512m"
 
-  mysql:
-    image: mysql:latest
-    environment:
-      MYSQL_ROOT_PASSWORD: my-secret-pw
-      # uncomment below if you want to automatically create and select a database
-      MYSQL_DATABASE: my_database
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql-data:/var/lib/mysql
-
 volumes:
-  mysql-data:
+  sqlite3-data-blacklight-demo:
