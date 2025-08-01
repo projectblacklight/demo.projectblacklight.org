@@ -75,7 +75,5 @@ gem 'rsolr', '>= 1.0'
 gem 'nio4r', '2.7.4'
 gem 'uri', '~> 0.13.0'
 
-gem 'cssbundling-rails', '~> 1.4'
-
 gem "thruster", "~> 0.1.14"
 gem 'puma'
