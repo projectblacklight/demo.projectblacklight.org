@@ -60,7 +60,7 @@ group :development do
 
 end
 
-gem 'blacklight', '~> 8.0'
+gem 'blacklight', '~> 9.0.0.beta6'
 gem 'blacklight-marc'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
