@@ -65,7 +65,6 @@ gem 'blacklight-marc'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
 gem 'mysql2', group: :production
-gem 'traject'
 
 gem 'honeybadger'
 
