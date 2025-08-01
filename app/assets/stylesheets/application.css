@@ -1,0 +1,6 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+@import url("https://cdn.jsdelivr.net/npm/blacklight-frontend@9.0.0-beta6/app/assets/builds/blacklight.css");
+:root {
+  --bl-logo-image: url("https://cdn.jsdelivr.net/npm/blacklight-frontend@9.0.0-beta6/app/assets/images/blacklight/logo.png");
+}

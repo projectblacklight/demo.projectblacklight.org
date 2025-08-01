@@ -16,7 +16,7 @@ WORKDIR /rails
 
 # Install base packages
 RUN apt-get update -qq && \
-  apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 default-libmysqlclient-dev nodejs npm && \
+  apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 default-libmysqlclient-dev && \
   rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set production environment
@@ -38,11 +38,6 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
   rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
   bundle exec bootsnap precompile --gemfile
-
-
-RUN npm install -g yarn
-COPY package.json yarn.lock ./
-RUN yarn install --check-files
 
 # Copy application code
 COPY . .
