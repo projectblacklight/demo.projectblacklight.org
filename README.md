@@ -35,3 +35,10 @@ bin/rake blacklight:index:seed
 
 ## Clean up
 To rebuild cleanly, you may need to run `docker compose down --volumes --rmi all` before rebuilding.
+
+
+## Pre-build image
+You can download and run the pre-built image by running:
+
+`docker pull ghcr.io/projectblacklight/demo.projectblacklight.org:latest`
+`docker run -p 3000:3000 ghcr.io/projectblacklight/demo.projectblacklight.org:latest`
