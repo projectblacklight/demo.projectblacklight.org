@@ -149,7 +149,7 @@ GEM
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashie (5.0.0)
-    honeybadger (6.0.6)
+    honeybadger (6.1.0)
       logger
       ostruct
     http (5.3.1)
@@ -245,7 +245,7 @@ GEM
       date
       stringio
     public_suffix (6.0.2)
-    puma (6.6.1)
+    puma (7.0.1)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.0)
