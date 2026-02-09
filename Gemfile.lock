@@ -97,7 +97,7 @@ GEM
       marc-fastxmlwriter
       rails
       traject (~> 3.0)
-    bootsnap (1.21.1)
+    bootsnap (1.22.0)
       msgpack (~> 1.2)
     builder (3.3.0)
     capybara (3.40.0)
@@ -348,9 +348,9 @@ GEM
       railties (>= 6.0.0)
     stringio (3.2.0)
     thor (1.5.0)
-    thruster (0.1.17-aarch64-linux)
-    thruster (0.1.17-arm64-darwin)
-    thruster (0.1.17-x86_64-linux)
+    thruster (0.1.18-aarch64-linux)
+    thruster (0.1.18-arm64-darwin)
+    thruster (0.1.18-x86_64-linux)
     timeout (0.5.0)
     traject (3.8.3)
       concurrent-ruby (>= 0.8.0)
