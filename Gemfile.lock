@@ -406,7 +406,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  blacklight (~> 9.0.0.beta6)
+  blacklight (~> 9.0.0)
   blacklight-locale_picker
   blacklight-marc
   bootsnap (>= 1.4.4)
