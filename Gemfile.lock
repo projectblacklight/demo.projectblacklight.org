@@ -99,7 +99,7 @@ GEM
       marc-fastxmlwriter
       rails
       traject (~> 3.0)
-    bootsnap (1.24.0)
+    bootsnap (1.24.1)
       msgpack (~> 1.2)
     builder (3.3.0)
     capybara (3.40.0)
