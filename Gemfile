@@ -69,9 +69,5 @@ gem 'honeybadger'
 gem 'blacklight-locale_picker'
 gem 'rsolr', '>= 1.0'
 
-# pin for beanstalk..
-gem 'nio4r', '2.7.4'
-gem 'uri', '~> 0.13.0'
-
 gem 'puma'
 gem 'thruster', '~> 0.1.14'

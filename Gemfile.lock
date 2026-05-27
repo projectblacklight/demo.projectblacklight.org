@@ -233,7 +233,7 @@ GEM
       timeout
     net-smtp (0.5.1)
       net-protocol
-    nio4r (2.7.4)
+    nio4r (2.7.5)
     nokogiri (1.19.3-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.19.3-arm64-darwin)
@@ -376,7 +376,7 @@ GEM
       railties (>= 7.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    uri (0.13.3)
+    uri (1.1.1)
     useragent (0.16.11)
     view_component (4.11.0)
       actionview (>= 7.1.0)
@@ -419,7 +419,6 @@ DEPENDENCIES
   honeybadger
   importmap-rails
   jbuilder (~> 2.7)
-  nio4r (= 2.7.4)
   propshaft
   puma
   rack-cors
@@ -432,7 +431,6 @@ DEPENDENCIES
   stimulus-rails
   thruster (~> 0.1.14)
   turbo-rails
-  uri (~> 0.13.0)
   web-console (>= 4.1.0)
   webdrivers
 
