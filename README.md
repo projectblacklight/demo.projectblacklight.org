@@ -41,4 +41,31 @@ You can download and run the pre-built image by running:
 ```
 docker pull ghcr.io/projectblacklight/demo.projectblacklight.org:latest
 docker volume create my-data-volume
-docker run -p 3000:3000  -v my-data-volume:/rails/storage ghcr.io/projectblacklight/demo.projectblacklight.org:latest`
+docker run -p 3000:3000  -v my-data-volume:/rails/storage ghcr.io/projectblacklight/demo.projectblacklight.org:latest
+```
+
+# Deploy
+The app is deployed to https://projectblacklight-demo.stanford.edu with [Kamal](https://kamal-deploy.org).
+Solr runs as a Kamal accessory on the same host.
+
+The server uses Kerberos for SSH, which Kamal can't use, so first install a one-time key:
+
+```
+kinit
+bin/setup-otk
+export KAMAL_OTK_KEY=~/.ssh/id_kamal_otk
+```
+
+`SECRET_KEY_BASE` and `HONEYBADGER_API_KEY` are read from Vault, so sign in with `vault login -method oidc`.
+Export `KAMAL_REGISTRY_PASSWORD` (a GitHub token with `write:packages` scope), then:
+
+```
+bin/kamal setup   # first time only: installs Docker, boots Solr and kamal-proxy, deploys the app
+bin/kamal seed    # first time only: index the sample documents
+bin/kamal deploy  # subsequent deploys
+```
+
+Or from the container repo:
+```shell
+VERSION="$(git rev-parse --short=7 HEAD)" KAMAL_REGISTRY_PASSWORD=secret KAMAL_OTK_KEY=~/.ssh/id_kamal_otk bin/kamal deploy --skip-push
+```
