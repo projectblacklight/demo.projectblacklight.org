@@ -1,0 +1,95 @@
+# Name of your application. Used to uniquely configure containers.
+service: blacklight-demo
+
+# Name of the container image. The GitHub Actions workflow also publishes :latest here.
+image: projectblacklight/demo.projectblacklight.org
+
+# Deploy to these servers.
+servers:
+  web:
+    - projectblacklight-demo.stanford.edu
+
+# Apache (managed by Puppet) owns ports 80/443, terminates SSL, and proxies to localhost:3000.
+# kamal-proxy listens there, bound to loopback so it can only be reached through Apache.
+# Apache sets ProxyPreserveHost Off, so the Host header is "localhost:3000"; don't set proxy.host.
+proxy:
+  run:
+    http_port: 3000
+    https_port: 4443
+    bind_ips:
+      - 127.0.0.1
+
+# Credentials for your image host.
+registry:
+  server: ghcr.io
+  username: jcoyne
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+# Inject ENV variables into containers (secrets come from .kamal/secrets).
+env:
+  secret:
+    - SECRET_KEY_BASE
+    - HONEYBADGER_API_KEY
+  clear:
+    SOLR_URL: http://blacklight-demo-solr:8983/solr/blacklight-core
+
+# Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
+# "bin/kamal logs -r solr" will tail logs from the Solr accessory.
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  shell: app exec --interactive --reuse "bash"
+  logs: app logs -f
+  dbc: app exec --interactive --reuse "bin/rails dbconsole"
+  seed: app exec --reuse "bin/rails blacklight:index:seed"
+
+# Use a persistent storage volume for the SQLite database (users, bookmarks, searches).
+volumes:
+  - "blacklight_demo_storage:/rails/storage"
+
+# Bridge fingerprinted assets, like JS and CSS, between versions to avoid
+# hitting 404 on in-flight requests. Combines all files from new and old
+# version inside the asset_path.
+asset_path: /rails/public/assets
+
+# Configure the image builder.
+builder:
+  arch: amd64
+  dockerfile: .docker/app/Dockerfile
+
+# Connect with the one-time key installed by bin/setup-otk (Kerberos can't be used by Kamal directly).
+ssh:
+  user: blacklight
+  keys:
+    - "<%= ENV.fetch('KAMAL_OTK_KEY') { abort 'Set KAMAL_OTK_KEY (run bin/setup-otk first)' } %>"
+  keys_only: true
+
+# Solr runs alongside the app on the same host, reachable on the kamal Docker network.
+accessories:
+  solr:
+    image: solr:9
+    host: projectblacklight-demo.stanford.edu
+    env:
+      clear:
+        SOLR_MODULES: analysis-extras
+        SOLR_HEAP: 512m
+    cmd: solr-precreate blacklight-core /opt/solr/conf
+    volumes:
+      - "blacklight_demo_solr:/var/solr"
+    files:
+      - solr/conf/_rest_managed.json:/opt/solr/conf/_rest_managed.json
+      - solr/conf/admin-extra.html:/opt/solr/conf/admin-extra.html
+      - solr/conf/elevate.xml:/opt/solr/conf/elevate.xml
+      - solr/conf/mapping-ISOLatin1Accent.txt:/opt/solr/conf/mapping-ISOLatin1Accent.txt
+      - solr/conf/protwords.txt:/opt/solr/conf/protwords.txt
+      - solr/conf/schema.xml:/opt/solr/conf/schema.xml
+      - solr/conf/scripts.conf:/opt/solr/conf/scripts.conf
+      - solr/conf/solrconfig.xml:/opt/solr/conf/solrconfig.xml
+      - solr/conf/spellings.txt:/opt/solr/conf/spellings.txt
+      - solr/conf/stopwords_en.txt:/opt/solr/conf/stopwords_en.txt
+      - solr/conf/stopwords.txt:/opt/solr/conf/stopwords.txt
+      - solr/conf/synonyms.txt:/opt/solr/conf/synonyms.txt
+      - solr/conf/xslt/example_atom.xsl:/opt/solr/conf/xslt/example_atom.xsl
+      - solr/conf/xslt/example_rss.xsl:/opt/solr/conf/xslt/example_rss.xsl
+      - solr/conf/xslt/example.xsl:/opt/solr/conf/xslt/example.xsl
+      - solr/conf/xslt/luke.xsl:/opt/solr/conf/xslt/luke.xsl

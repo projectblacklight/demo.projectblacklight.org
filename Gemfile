@@ -60,6 +60,9 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
+
+  # Deploy this application anywhere as a Docker container [https://kamal-deploy.org]
+  gem 'kamal', require: false
 end
 
 gem 'blacklight', '~> 9.0.0'

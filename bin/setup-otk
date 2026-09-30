@@ -1,0 +1,64 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+require 'securerandom'
+require 'tmpdir'
+
+# This script implements a "One-Time Key" strategy for Kamal in Kerberos environments.
+# It uses the system SSH client (which handles Kerberos) to install a temporary key,
+# then tells Kamal to use that key.
+
+USER = "blacklight"
+HOST = "projectblacklight-demo.stanford.edu"
+COMMENT = "kamal-otk-#{SecureRandom.hex(6)}"
+
+def setup_otk
+  key_path = File.expand_path("~/.ssh/id_kamal_otk")
+
+  puts "--- Generating temporary SSH key at #{key_path} ---"
+  # `AddKeysToAgent yes` in ~/.ssh/config means past runs leave their dead keys in
+  # the agent. Enough of those and the server hits MaxAuthTries before trying ours.
+  system("ssh-add -d #{key_path} > /dev/null 2>&1")
+  FileUtils.rm_f(key_path)
+  FileUtils.rm_f("#{key_path}.pub")
+  system("ssh-keygen -t ed25519 -f #{key_path} -N '' -C '#{COMMENT}'")
+
+  pub_key = File.read("#{key_path}.pub").strip
+
+  puts "--- Installing key on remote host via system SSH (Kerberos) ---"
+  # Drop the `kamal-otk-*` keys left by previous runs before appending the new one,
+  # so authorized_keys doesn't accumulate dead credentials. Every such line was
+  # written by this script, so they're all ours to remove. Kerberos is the fallback
+  # way in, so we're never locked out even if this leaves the file empty.
+  # Use -o BatchMode=yes to fail fast if Kerberos isn't working
+  install_cmd = [
+    "mkdir -p ~/.ssh",
+    "chmod 700 ~/.ssh",
+    "touch ~/.ssh/authorized_keys",
+    "{ grep -v ' kamal-otk-' ~/.ssh/authorized_keys || true; } > ~/.ssh/authorized_keys.tmp",
+    "mv ~/.ssh/authorized_keys.tmp ~/.ssh/authorized_keys",
+    "chmod 600 ~/.ssh/authorized_keys",
+    "echo '#{pub_key}' >> ~/.ssh/authorized_keys"
+  ].join(" && ")
+
+  if system("ssh -o BatchMode=yes #{USER}@#{HOST} \"#{install_cmd}\"")
+    puts "--- Key installed successfully ---"
+
+    puts "--- Verifying key-based connection (bypassing Kerberos) ---"
+    # IdentitiesOnly=yes is essential: without it ssh offers every agent key first
+    # and exhausts the server's MaxAuthTries before it gets to this one.
+    if system("ssh -i #{key_path} -o IdentitiesOnly=yes -o PasswordAuthentication=no -o GSSAPIAuthentication=no #{USER}@#{HOST} 'hostname'")
+      puts "--- Verification successful! ---"
+      puts "\nNow run Kamal:"
+      puts "export KAMAL_OTK_KEY=#{key_path}"
+      puts "bin/kamal deploy"
+    else
+      puts "--- Verification FAILED. The key was installed but isn't working for login. ---"
+    end
+  else
+    puts "--- Failed to install key via SSH. Is your kinit valid? ---"
+    exit 1
+  end
+
+  key_path
+end
+setup_otk
