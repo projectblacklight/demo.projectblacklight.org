@@ -62,7 +62,7 @@ group :development do
   gem 'web-console', '>= 4.1.0'
 end
 
-gem 'blacklight', '~> 9.0.0'
+gem 'blacklight', '~> 9.2'
 gem 'blacklight-marc'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
