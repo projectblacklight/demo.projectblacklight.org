@@ -5,7 +5,6 @@ require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
 
-require 'solr_wrapper/rake_task' unless Rails.env.production?
 task(:default).clear
 task default: [:ci]
 
@@ -28,11 +27,7 @@ def with_solr(&block)
       system_with_error_handling "docker compose stop solr"
     end
   else
-    require 'solr_wrapper'
-
-    SolrWrapper.wrap(port: '8983') do |solr|
-      solr.with_collection(name: 'blacklight-core', dir: Rails.root.join('solr/conf'), &block)
-    end
+    warn "Docker Compose not available, skipping Solr setup"
   end
 end
 
