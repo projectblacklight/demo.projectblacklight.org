@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # Health check used by kamal-proxy. Returns 200 if the app boots with no exceptions, otherwise 500.
+  get 'up' => 'rails/health#show', as: :rails_health_check
+
   scope '/(:locale)',
     # This is a workaround for https://github.com/rails/rails/issues/32013
     constraints: { locale: /(#{Rails.application.config.available_locales.join('|')})/ } do
