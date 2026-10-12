@@ -1,6 +1,7 @@
 require_relative "boot"
 
 require "rails/all"
+require_relative "../lib/middleware/facet_limit"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -14,7 +15,7 @@ module DemoProjectblacklightOrg
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w(assets tasks))
+    config.autoload_lib(ignore: %w(assets middleware tasks))
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -28,5 +29,8 @@ module DemoProjectblacklightOrg
     config.action_dispatch.rescue_responses.merge!(
      "I18n::InvalidLocale" => :not_found
    )
+
+    # Turn away facet-crawling bots before they consume a Puma thread on routing or Solr.
+    config.middleware.insert_before 0, FacetLimit
   end
 end
