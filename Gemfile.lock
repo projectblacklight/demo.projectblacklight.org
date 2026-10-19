@@ -347,9 +347,9 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
     slop (4.10.1)
-    sqlite3 (2.9.6-aarch64-linux-gnu)
-    sqlite3 (2.9.6-arm64-darwin)
-    sqlite3 (2.9.6-x86_64-linux-gnu)
+    sqlite3 (2.10.0-aarch64-linux-gnu)
+    sqlite3 (2.10.0-arm64-darwin)
+    sqlite3 (2.10.0-x86_64-linux-gnu)
     sshkit (1.25.1)
       base64
       logger
