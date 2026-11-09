@@ -32,4 +32,9 @@ jobs:
           context: .
           file: .docker/app/Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}:latest
+          # Kamal deploys the image tagged with the commit SHA (`bin/kamal deploy --skip-push`)
+          # and requires the `service` label to match `service:` in config/deploy.yml.
+          tags: |
+            ghcr.io/${{ github.repository }}:latest
+            ghcr.io/${{ github.repository }}:${{ github.sha }}
+          labels: service=blacklight-demo
