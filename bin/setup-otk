@@ -49,7 +49,6 @@ def setup_otk
     if system("ssh -i #{key_path} -o IdentitiesOnly=yes -o PasswordAuthentication=no -o GSSAPIAuthentication=no #{USER}@#{HOST} 'hostname'")
       puts "--- Verification successful! ---"
       puts "\nNow run Kamal:"
-      puts "export KAMAL_OTK_KEY=#{key_path}"
       puts "bin/kamal deploy"
     else
       puts "--- Verification FAILED. The key was installed but isn't working for login. ---"

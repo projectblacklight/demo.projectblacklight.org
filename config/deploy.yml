@@ -61,7 +61,7 @@ builder:
 ssh:
   user: blacklight
   keys:
-    - "<%= ENV.fetch('KAMAL_OTK_KEY') { abort 'Set KAMAL_OTK_KEY (run bin/setup-otk first)' } %>"
+    - "<%= File.expand_path(ENV.fetch('KAMAL_OTK_KEY', '~/.ssh/id_kamal_otk')).tap { |k| abort "SSH key #{k} not found (run bin/setup-otk first)" unless File.exist?(k) } %>"
   keys_only: true
 
 # Solr runs alongside the app on the same host, reachable on the kamal Docker network.

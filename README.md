@@ -52,8 +52,7 @@ The server uses Kerberos for SSH, which Kamal can't use, so first install a one-
 
 ```
 kinit
-bin/setup-otk
-export KAMAL_OTK_KEY=~/.ssh/id_kamal_otk
+bin/setup-otk   # installs ~/.ssh/id_kamal_otk, which Kamal uses by default (override with KAMAL_OTK_KEY)
 ```
 
 `SECRET_KEY_BASE` and `HONEYBADGER_API_KEY` are read from Vault, so sign in with `vault login -method oidc`.
@@ -67,5 +66,5 @@ bin/kamal deploy  # subsequent deploys
 
 Or from the container repo:
 ```shell
-VERSION="$(git rev-parse --short=7 HEAD)" KAMAL_REGISTRY_PASSWORD=secret KAMAL_OTK_KEY=~/.ssh/id_kamal_otk bin/kamal deploy --skip-push
+VERSION="$(git rev-parse --short=7 HEAD)" KAMAL_REGISTRY_PASSWORD=secret bin/kamal deploy --skip-push
 ```
